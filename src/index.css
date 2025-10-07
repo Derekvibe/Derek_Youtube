@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 260 100% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 260 100% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 260 100% 65%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(260 100% 65%), hsl(240 100% 70%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%), hsl(260 100% 98%));
+    --shadow-card: 0 4px 20px -2px hsl(260 100% 65% / 0.1);
+    --shadow-card-hover: 0 12px 40px -4px hsl(260 100% 65% / 0.2);
+  }
+
+  .dark {
+    --background: 222 47% 5%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 40% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 40% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 260 100% 70%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 260 100% 70%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 260 100% 70%;
+
+    /* Dark mode custom tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(260 100% 70%), hsl(240 100% 75%));
+    --gradient-hero: linear-gradient(180deg, hsl(222 47% 5%), hsl(260 60% 10%));
+    --shadow-card: 0 4px 20px -2px hsl(260 100% 70% / 0.15);
+    --shadow-card-hover: 0 12px 40px -4px hsl(260 100% 70% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600;
+  }
+
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+  }
+}
