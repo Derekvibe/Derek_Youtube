@@ -46,7 +46,7 @@ const About = () => {
               <div>
                 <p className="text-sm text-muted-foreground mb-2">Email</p>
                 <a 
-                  href="mailto:hello@example.com" 
+                  href="mailto:derekemmanuel99@gmail.com" 
                   className="text-primary hover:underline font-medium"
                 >
                   derekemmanuel99@gmail.com
